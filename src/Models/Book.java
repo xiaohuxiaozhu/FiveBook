@@ -24,7 +24,8 @@ Title and Description.
      private String author;
      private String description;
      private double price;
-     private boolean isInStock;
+     private int    pNumber,units;
+    // private boolean isInStock;
 
 
    /* Book(String title,
@@ -44,16 +45,21 @@ Title and Description.
      }
      //overload constructor
 
-     private Book(String title,
+     public Book(String title,
                   String author,
                   String description,
-                  double price,
-                  boolean isInStock) {
+                  double price ,
+                  int pNumber,
+                  int units
+                  /*boolean isInStock*/) {
          this.title = title;
          this.author = author;
          this.description = description;
          this.price = price;
-         this.isInStock = isInStock;
+         this.pNumber = pNumber;
+         this.units=units;
+        // this.isInStock = isInStock;
+
      }
 
 
@@ -90,6 +96,21 @@ Title and Description.
 
      }
 
+     public int getUnits(){
+         return units;
+     }
+     public void setUnits(int units){
+         this.units=units;
+     }
+
+     public int getpNumber(){
+         return pNumber;
+     }
+     public void setpNumber(int pNumber){
+         this.pNumber=pNumber;
+     }
+
+/*
      public boolean getisInStock() {
          return isInStock;
      }
@@ -97,11 +118,20 @@ Title and Description.
      public void setisInStock(boolean isInStock) {
          this.isInStock = isInStock;
      }
+*/
+     public double calculateToalPrice(){
+         return (units*price);
+     }
+    /* //calculate All Items total Price
+     public double CalAllItemstotalP(){
+         return(totalPrice);
+     }*/
 
      public void getDisplayText() {
          System.out.println("Author: " + this.author + " , Title: " + this.title
                             + " , Description: " + this.description + " , Price: " +this.price
-                            + " , Instock."+ this.isInStock);
+                            + " , Unit : " + this.units + ", Product Number" +this.pNumber
+                            /*+ " , Instock."+ this.isInStock*/ );
 
      }
  }
